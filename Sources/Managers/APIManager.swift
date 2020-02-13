@@ -113,7 +113,9 @@ extension APIManager {
         components.host = "itunes.apple.com"
         components.path = "/lookup"
 
-        var items: [URLQueryItem] = [URLQueryItem(name: Constants.bundleID, value: Bundle.main.bundleIdentifier)]
+        let bundleIdentifier = Bundle.main.bundleIdentifier?
+            .replacingOccurrences(of: ".UAT", with: "")
+        var items: [URLQueryItem] = [URLQueryItem(name: Constants.bundleID, value: bundleIdentifier)]
 
         if let countryCode = countryCode {
             let item = URLQueryItem(name: Constants.country, value: countryCode)
