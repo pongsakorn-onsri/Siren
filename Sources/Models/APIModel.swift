@@ -9,7 +9,7 @@
 import Foundation
 
 /// Model representing a selection of results from the iTunes Lookup API.
-struct APIModel: Decodable {
+public struct APIModel: Decodable {
     /// Codable Coding Keys for the Top-Level iTunes Lookup API JSON response.
     private enum CodingKeys: String, CodingKey {
         /// The results JSON key.

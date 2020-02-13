@@ -9,14 +9,14 @@
 import UIKit
 
 /// Version parsing functions for Siren.
-struct DataParser {
+public struct DataParser {
     /// Checks to see if the App Store version of the app is newer than the installed version.
     ///
     /// - Parameters:
     ///   - installedVersion: The installed version of the app.
     ///   - appStoreVersion: The App Store version of the app.
     /// - Returns: `true` if the App Store version is newer. Otherwise, `false`.
-    static func isAppStoreVersionNewer(installedVersion: String?, appStoreVersion: String?) -> Bool {
+    public static func isAppStoreVersionNewer(installedVersion: String?, appStoreVersion: String?) -> Bool {
         guard let installedVersion = installedVersion,
             let appStoreVersion = appStoreVersion,
             (installedVersion.compare(appStoreVersion, options: .numeric) == .orderedAscending) else {
